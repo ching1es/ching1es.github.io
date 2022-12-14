@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>good</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="container">
+        <div id="banner">
+            <div id="content">
+                <h2 id="clock"></h2>
+            </div>
+            <div id="weather">
+                <span class="temp-icon"></span>
+                <span></span>
+            </div>
+            <form id="sign" class="hidden">
+                <label for="name">
+                    <input 
+                        id="name"
+                        required
+                        maxlength="15"
+                        type="text"
+                        placeholder="what is your name?">
+                        <button>
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+                        <div id="profile"><i class="fa-solid fa-user"></i></div>
+                </label>
+            </form>
+            <form id="login" class="hidden">
+                <div id="login-content">
+                    <h1 id="welcome" class="hidden"></h1>
+                    <button id="profile"><i class="fa-solid fa-user"></i></button>
+                </div>
+            </form>
+        </div>
+        <div id="todo-content">
+            <div id="input-content">
+                <div id="input-icon">
+                    <button disabled>
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                </div>
+                <form id="todo-form">
+                    <label for="todo">
+                        <input
+                        id="todo"
+                        type="text"  
+                        placeholder="👉To Do List👈" 
+                        required>
+                        <button>
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                    </label>
+                </form>
+            </div>
+            <div id="ul-content">
+                <ul id="todo-list"></ul>
+            </div>
+        </div>
+        <div id="bottom">
+            <div id="quote">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div id="icon-item">
+            <button class="icons">
+                <i class="fa-solid fa-rotate-right"></i>
+            </button>
+        </div>
+        <div id="image"></div>
+    </div>
+</body>
+    <script src="js/welcome.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="https://kit.fontawesome.com/b88158d547.js" crossorigin="anonymous"></script>
+</html>
