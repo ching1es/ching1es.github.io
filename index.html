@@ -21,21 +21,32 @@
             <form id="sign" class="hidden">
                 <label for="name">
                     <input 
-                        id="name"
-                        required
-                        maxlength="15"
-                        type="text"
-                        placeholder="what is your name?">
-                        <button>
-                            <i class="fa-solid fa-heart"></i>
-                        </button>
-                        <div id="profile"><i class="fa-solid fa-user"></i></div>
+                    id="name"
+                    required
+                    maxlength="15"
+                    type="text"
+                    placeholder="what is your name?">
+                    <button>
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
                 </label>
             </form>
             <form id="login" class="hidden">
                 <div id="login-content">
                     <h1 id="welcome" class="hidden"></h1>
-                    <button id="profile"><i class="fa-solid fa-user"></i></button>
+                    <label for="avatar">
+                        <div id="profile">
+                            <i class="fa-solid fa-user"></i>
+                            <button id="changebtn"><i class="fa-solid fa-camera-retro"></i></button>
+                            <img id="profile-img" onerror="this.style.display='none'"/>
+                        </div>
+                    </label>
+                    <input 
+                    type="file"
+                    id="avatar" 
+                    name="avatar"
+                    accept="image/png, image/jpg"
+                    hidden>
                 </div>
             </form>
         </div>
@@ -77,11 +88,13 @@
         <div id="image"></div>
     </div>
 </body>
+
     <script src="js/welcome.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/profile.js"></script>
     <script src="https://kit.fontawesome.com/b88158d547.js" crossorigin="anonymous"></script>
 </html>
