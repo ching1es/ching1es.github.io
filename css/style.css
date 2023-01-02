@@ -3,8 +3,39 @@
 body 
 {
     font-family: 'Ubuntu';
+    /* overflow-x: hidden;
+    overflow-y: hidden; */
 }
 
+.snowflake{
+    font-size: 20px;
+    border-radius: 50%;
+    color: snow;
+    position: absolute;
+    top: -20px;
+}
+
+/* @keyframes = 애니메이션 제어 */
+@keyframes fall {
+    0%{
+        transform: translateY(0);
+    }
+    20%{
+        transform: translate(-15px, 20vh);
+    }
+    40%{
+        transform: translate(15px, 40vh);
+    }
+    60%{
+        transform: translate(-15px, 60vh);
+    }
+    80%{
+        transform: translate(0,80vh);
+    }
+    100%{
+        transform: translateY(100vh);
+    }
+}
 .hidden 
 {
     display: none;
@@ -27,9 +58,11 @@ body
     left: 0;
     right: 0;
     bottom: 0;
+    margin: auto;
     width: 100%;
     height: 100%;
     z-index: -1;
+    overflow: hidden;
 }
 
 #container #banner
@@ -84,6 +117,7 @@ body
     height: 20px;
     margin-right: 5px;
     border-radius: 9px;
+    font-weight: 510;
 }
 #container #banner #welcome::after
 {
@@ -141,55 +175,30 @@ body
 #container #banner #profile 
 {   
     margin-left: 10px;
-    background-color: rgb(233, 233, 233);
-    border: 0;
-    text-align: center;
+    background-color: rgb(233,233,233);
+    border: 3px solid rgb(233, 233, 233);
     width: 60px;
     height: 60px;
-    line-height: 50px;
     border-radius: 50px;
     margin-right: 20px;
-    font-size: 25px;
-    color: rgb(92,92,92);
-    transform: scale(.75);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    transform: scale(.7);
 }
 #container #banner #profile:hover
 {
     transition: transform 0.3s linear;
-    transform:scale(0.9);
-    background-color: transparent;
-    /* color: transparent; */
-    color: rgb(255, 0, 0);
+    transform:scale(.8);
     border-radius: 50px;
 }
-
-#container #banner #profile #changebtn {
-    position: absolute;
-    background-color: transparent; 
-    border: 0;
-    color: rgb(255, 4, 4);
-    z-index: -1;
-}
-#container #banner #profile #changebtn:hover {
-    border: 0;
-    color: rgb(255, 0, 0);
-}
-#container #banner #profile #changebtn .fa-solid{
-    font-size: 20px;
-    color: rgb(255, 0, 0);
-}
-#container #banner #profile img{
-    position: absolute;
+#container #banner #profile #img-content
+{
+    position: relative; 
     width: 60px;
     height: 60px;
     border-radius: 50px;
-    color: rgb(255, 0, 0);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
-
 /* center item */
 #container #content
 {
@@ -216,7 +225,10 @@ body
 #container #todo-content
 {
     position: absolute;
-    right: 80px;
+    right: 100px;
+    display: flex;
+    margin-left: 5px;
+    flex-direction: column;
 }
 #container #todo-content #input-content
 {
@@ -228,7 +240,6 @@ body
     height: 30px;
     border-radius: 30px;
     padding: 2px;
-    margin-top: 10px;
 }
 #container #todo-content #input-icon button
 {
@@ -241,7 +252,7 @@ body
     border-radius: 15px;
     outline: none;
     padding-left: 10px;
-    background-color: rgb(233, 233, 233);
+    background-color: transparent;
     text-align: center;
 }
 #container #todo-content #todo-form button
@@ -249,14 +260,29 @@ body
     color: rgb(92,92,92);
     border: 0;
     background-color: transparent;
+    
 }
 #container #todo-content #ul-content
 {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
+    /* display: flex;
+    flex-direction: column; */
+    margin: 10px 10px 0 10px;
+    border-radius: 10px;
+    background-color: rgb(233, 233, 233);
+    /* padding-bottom: 50px; */
+
 }
 
+#container #todo-content #ul-content #todo-list{
+    display: flex;
+    flex-direction: column-reverse;
+}
+#container #todo-content #ul-content #todo-list p {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    color: rgb(92,92,92);
+}
 /* ul grid */
 
 #container #ul-content li
@@ -264,10 +290,15 @@ body
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    padding: 5px;
-    background-color: rgb(233, 233, 233);
-    margin-bottom: 10px;
-    border-radius: 20px;
+    padding: 10px;
+    /* margin-top: 10px; */
+    color: rgb(92,92,92);
+    border-block-end: 1px solid rgba(92, 92, 92, 0.205);
+}
+#container #ul-content li button {
+    color: rgb(92,92,92);
+    font-size: 17px;
+    font-weight: 800;
 }
 
 #container #ul-content li span
@@ -319,3 +350,4 @@ body
     line-height: 30px;
     color: rgb(233,233,233);
 }
+
