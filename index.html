@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width">
     <title>good</title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- <div class="snowflake"></div> -->
     <div id="container">
         <div id="banner">
             <div id="content">
@@ -36,16 +38,18 @@
                     <h1 id="welcome" class="hidden"></h1>
                     <label for="avatar">
                         <div id="profile">
-                            <i class="fa-solid fa-user"></i>
-                            <button id="changebtn"><i class="fa-solid fa-camera-retro"></i></button>
-                            <img id="profile-img" onerror="this.style.display='none'"/>
+                            <!-- <i class="fa-solid fa-user"></i> -->
+                            <!-- <button id="changebtn"><i class="fa-solid fa-camera-retro"></i></button> -->            
+                            <div id="img-content">
+                                <img id="profile-img" onerror="this.style.display='none'"/>
+                            </div>
                         </div>
                     </label>
                     <input 
                     type="file"
                     id="avatar" 
                     name="avatar"
-                    accept="image/png, image/jpg"
+                    accept="image/"
                     hidden>
                 </div>
             </form>
@@ -71,7 +75,9 @@
                 </form>
             </div>
             <div id="ul-content">
-                <ul id="todo-list"></ul>
+                <ul id="todo-list">
+                    <p>things to do</p>
+                </ul>
             </div>
         </div>
         <div id="bottom">
@@ -88,7 +94,7 @@
         <div id="image"></div>
     </div>
 </body>
-
+    <!-- <script src="js/snowflake.js"></script> -->
     <script src="js/welcome.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
